@@ -1,17 +1,15 @@
-package org.example
-
 fun task6() {
     try {
         println("Enter your name:")
-        var name = readln().trim()
+        val name = readln().trim()
 
         val nameRegex = Regex("(?:[A-Z]\\p{L}+ ){1,3}[A-Z]\\p{L}+")
         if (!nameRegex.matches(name)) {
-            throw IllegalArgumentException("Name contains invalid characters or is empty.")
+            throw InvalidInputException("Name contains invalid characters or is empty.")
         }
 
         println("Enter your age:")
-        var age = readln().toInt()
+        val age = readln().toInt()
         if (age >= 16) {
             println("Candidate: $name. $age years old has successfully registered.")
         } else {
@@ -19,7 +17,9 @@ fun task6() {
         }
     } catch (e: IllegalArgumentException) {
         println("Error: ${e.message}")
-    } catch (e: Exception) {
+    } catch (e: InvalidInputException) {
         println("Invalid input. Please try again.")
     }
 }
+
+class InvalidInputException(message: String) : Exception(message)

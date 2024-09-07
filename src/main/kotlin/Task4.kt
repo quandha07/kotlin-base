@@ -1,5 +1,3 @@
-package org.example
-
 import java.util.*
 
 fun task4() {
@@ -11,7 +9,7 @@ fun task4() {
             result *= i
         }
         println("the factorial of $num: $result")
-    } catch (e: Exception) {
+    } catch (e: InputMismatchException) {
         println("The number is invalid")
     }
 }

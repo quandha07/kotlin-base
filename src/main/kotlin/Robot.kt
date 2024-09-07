@@ -2,9 +2,9 @@ enum class Direction {
     NORTH, EAST, SOUTH, WEST
 }
 
-class Robot(var x: Int, var y: Int, var direction: Direction) {
+class Robot(private var x: Int, private var y: Int, private var direction: Direction) {
 
-    fun move(instruction: Char) {
+    private fun move(instruction: Char) {
         when (instruction) {
             'R' -> turnRight()
             'L' -> turnLeft()

@@ -1,6 +1,12 @@
 package org.example
 
 import Robot
+import task1
+import task2
+import task3
+import task4
+import task5
+import task6
 
 
 fun main() {
@@ -13,7 +19,7 @@ fun main() {
         println("5. Lists and Collections")
         println("6. Basic Input and Output")
         println("7. Big Assignment")
-        var c = readLine()
+        val c = readlnOrNull()
         when (c) {
             "1" -> task1()
             "2" -> task2()
